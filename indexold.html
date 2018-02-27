@@ -21,35 +21,57 @@
 <body>
     <div class="container">
         <div class="row characters">
-          
+            <div class="card img-thumbnail character" id="obi_wan">
+                <div class="card-block">
+                    <p class="card-text text-center">Obi Wan</p>
+                </div>
+                <img class="img-responsive" src="assets/images/obi_wan.jpg" alt="Obi Wan">
+                <div class="points">100</div>
+            </div>
+            <div class="card img-thumbnail character" id="luke_skywalker">
+                <div class="card-block">
+                    <p class="card-text text-center">Luke Skywwalker</p>
+                </div>
+                <img class="card-img-top img-responsive" src="assets/images/luke_skywalker.jpg" alt="Luke Skywalker">
+                <div class="points">100</div>
+            </div>
+            <div class="card img-thumbnail character" id="darth_sidious">
+                <div class="card-block">
+                    <p class="card-text text-center">Darth Sidious</p>
+                </div>
+                <img class="card-img-top img-responsive" src="assets/images/darth_sidious.jpg" alt="Darth Sidious">
+                <div class="points">100</div>
+            </div>
+            <div class="card img-thumbnail character" id="darth_maul">
+                <div class="card-block">
+                    <p class="card-text text-center">Darth Maul</p>
+                </div>
+                <img class="card-img-top img-responsive" src="assets/images/darth_maul.jpg" alt="Darth Maul">
+                <div class="points">100</div>
+            </div>
         </div>
-
         <div class="row">
             <h1>YOUR CHARACTER</h1>
             <div class="yourCharacter"></div>
         </div>
-
         <div class="row">
             <h1>ENEMIES AVALABLE TO ATTACK</h1>
             <div class="enemies"></div>
         </div>
-
         <div class="row">
             <h1>FIGHT</h1>
             <div class="col-sm-1">
                 <button type="button" class="btn btn-danger">Attack</button>
-            </div>
+                </div>
             <div class="col-sm-6">
                 <div class="attackMessage"></div>
-            </div>
+                </div>
         </div>
-
         <div class="row">
             <h1>DEFENDER</h1>
             <div class="defender"></div>
         </div>
     </div>
-    
     <script src="assets/javascript/game.js"></script>
 
 </body>

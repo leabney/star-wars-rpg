@@ -2,7 +2,8 @@ $(document).ready(function () {
 
     var yourCharacter = "";
     var yourHealthPoints;
-    var yourAttackPoints;
+    var yourInitialAttackPoints;
+    var yourAttackPoints=0;
     var yourCard;
     var yourDisplayName;
 
@@ -16,8 +17,8 @@ $(document).ready(function () {
         this.displayName = displayName;
         this.type = "character";
         this.healthPoints = Math.round((Math.floor(Math.random() * 70) + 101) / 10) * 10;
-        this.attackPoints = Math.floor(Math.random() * 14) + 1;
-        this.counterAttackPoints = Math.floor(Math.random() * 24) + 1;
+        this.attackPoints = Math.floor(Math.random() * 4) + 11;
+        this.counterAttackPoints = Math.floor(Math.random() * 14) + 21;
         this.imgSrc = imgSrc;
         this.card =
             '<div class="card img-thumbnail character" id="' + this.name + '">' +
@@ -48,12 +49,12 @@ $(document).ready(function () {
                         yourCharacter = $(this).attr("id");
                         yourDisplayName=character.displayName;
                         yourHealthPoints = character.healthPoints;
-                        yourAttackPoints = character.attackPoints;
+                        yourInitialAttackPoints = character.attackPoints;
                         $(".yourCharacter").html(character.card);
 
                         console.log("Your character: " + character.displayName);
                         console.log("Your health points: " + yourHealthPoints);
-                        console.log("Your attack points: " + yourAttackPoints);
+                        console.log("Your attack points: " + yourInitialAttackPoints);
 
                         $(this).remove();
                         $(".characters").appendTo($(".enemies"))
@@ -76,7 +77,7 @@ $(document).ready(function () {
                         defender = $(this).attr("id");
                         defenderDisplayName = character.displayName;
                         defenderHealthPoints = character.healthPoints;
-                        defenderCounterAttackPoints = character.attackPoints;
+                        defenderCounterAttackPoints = character.counterAttackPoints;
                         $(".defender").html(character.card);
 
 
@@ -95,8 +96,11 @@ $(document).ready(function () {
         if (yourCharacter !="" && defender !=""){
 
             if (yourHealthPoints > 0 && defenderHealthPoints>0){
-
+            
+            yourAttackPoints = yourAttackPoints + yourInitialAttackPoints;
             yourHealthPoints=yourHealthPoints-defenderCounterAttackPoints;
+
+
             defenderHealthPoints=defenderHealthPoints-yourAttackPoints;
             $(".yourCharacter").find(".points").html(yourHealthPoints);
             $(".defender").find(".points").html(defenderHealthPoints);
@@ -110,6 +114,10 @@ $(document).ready(function () {
 
             if (defenderHealthPoints < 1) {
                 $(".attackMessage").html("You defeated "+ defenderDisplayName + ".");
+                $(".defender").html("");
+                defender="";
+             
+
             }
         
     

@@ -1,0 +1,70 @@
+body {
+    background-image: url("../images/background.jpg");
+    background-repeat:no-repeat;
+    
+    color: white;
+    font-family: 'Black Ops One', cursive;
+}
+
+.row {
+    padding-bottom: 0;
+}
+
+h1 {
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.card {
+    color: black;
+    width: 150px;
+    height: 120px;
+    margin-right: 8px;
+}
+
+.points {
+    position: relative;
+    top:  -20px;
+    right: -100px;
+    color: lightgray;
+}
+
+.btn {
+    margin-bottom: 10px;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+}
+.card-text{
+    margin-bottom:0px;
+}
+
+.card:hover {
+    background-color: #A8A9E9;
+    border-color: #292ba3;
+}
+
+.enemies > .characters > .card:hover {
+    background-color: #DA9697;
+    border-color: #842e30;
+}
+
+.yourCharacter > .card {
+    background-color: #A8A9E9;
+    border-color: #292ba3;
+}
+
+
+.defender > .card {
+    background-color: #DA9697;
+    border-color: #842e30;
+}
+
+.attackMessage {
+    background-color: #c9302c;
+    color: white;
+  
+}
+
